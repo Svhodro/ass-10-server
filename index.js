@@ -4,8 +4,8 @@ const Usermodel=require("./Usermodel")
 const bodyParser = require('body-parser');
 var cors = require('cors')
 const app = express()
-const port =process.env.PORT
-app.use(bodyParser.json());
+const port =5000
+   app.use(bodyParser.json());
 app.use(cors())
 // Assinment10
 // QiQeDXciwYjyFcq5
@@ -81,7 +81,9 @@ app.post('/update',async(req,res)=>{
   res.send("Update Compleate")
   console.log(data)
 })
-
+app.get('/',(req,res)=>{
+   res.send("server runing")
+})
   
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
